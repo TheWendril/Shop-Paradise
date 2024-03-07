@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bks32ccx4be02"]
+
+[ext_resource type="Theme" uid="uid://cewesbs7xpovm" path="res://themes/hud theme.tres" id="1_je4b8"]
+[ext_resource type="Texture2D" uid="uid://dis4v2pwgb1g2" path="res://themes/season/summer.webp" id="2_4mfwg"]
+[ext_resource type="Texture2D" uid="uid://qyj3l2ubel2l" path="res://themes/clock.png" id="2_x3pjx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i8amb"]
+font_size = 48
+
+[node name="main_hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_je4b8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme = ExtResource("1_je4b8")
+
+[node name="clock_bg" type="Sprite2D" parent="Panel"]
+position = Vector2(53, 29)
+scale = Vector2(0.170683, 0.169679)
+texture = ExtResource("2_x3pjx")
+
+[node name="clock" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 23.0
+offset_top = 4.0
+offset_right = 83.0
+offset_bottom = 42.0
+grow_vertical = 0
+size_flags_horizontal = 0
+text = "13:45"
+label_settings = SubResource("LabelSettings_i8amb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="season" type="Sprite2D" parent="Panel"]
+position = Vector2(1115, 29)
+scale = Vector2(0.0208253, 0.0197869)
+texture = ExtResource("2_4mfwg")

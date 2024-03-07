@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://h4rk46i74cea"]
+
+[ext_resource type="Script" path="res://scripts/store/store.gd" id="1_5chbd"]
+[ext_resource type="Texture2D" uid="uid://c4oq6cmrtq3ub" path="res://assets/stores/clothing.png" id="1_vi3qo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3ds5"]
+size = Vector2(482, 292)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drp7i"]
+size = Vector2(0, 13.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsr44"]
+size = Vector2(0, 13.4375)
+
+[node name="clothing" type="Node2D"]
+position = Vector2(566, 432)
+script = ExtResource("1_5chbd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vi3qo")
+
+[node name="Shape" type="Area2D" parent="."]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shape"]
+position = Vector2(-9, 56)
+shape = SubResource("RectangleShape2D_h3ds5")
+
+[node name="down_link_1" type="Area2D" parent="."]
+
+[node name="down_collision_shape" type="CollisionShape2D" parent="down_link_1"]
+position = Vector2(-249, 209.375)
+shape = SubResource("RectangleShape2D_drp7i")
+
+[node name="down_link_2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="down_link_2"]
+position = Vector2(232, 209.281)
+shape = SubResource("RectangleShape2D_qsr44")
+
+[connection signal="area_entered" from="Shape" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Shape" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_shape_entered" from="Shape" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="area_entered" from="down_link_1" to="." method="_on_down_link_1_area_entered"]
+[connection signal="area_exited" from="down_link_1" to="." method="_on_down_link_1_area_exited"]
+[connection signal="area_entered" from="down_link_2" to="." method="_on_down_link_2_area_entered"]
+[connection signal="area_exited" from="down_link_2" to="." method="_on_down_link_2_area_exited"]

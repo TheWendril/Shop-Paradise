@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://doq1tyi4b8oap"]
+
+[ext_resource type="PackedScene" uid="uid://d1n8t4lh40j8c" path="res://scenes/scenary.tscn" id="1_05qvc"]
+[ext_resource type="PackedScene" uid="uid://bks32ccx4be02" path="res://scenes/hud/main_hud.tscn" id="2_7qekh"]
+
+[node name="game" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_05qvc")]
+
+[node name="main_hud" parent="." instance=ExtResource("2_7qekh")]
+offset_left = 746.0
+offset_top = -45.0
+offset_right = 746.0
+offset_bottom = -45.0
